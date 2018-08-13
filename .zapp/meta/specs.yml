@@ -1,0 +1,447 @@
+/paths/%2Fconferences%2F%7BconferenceId%7D:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/paths/%2Fconferences%2F%7BconferenceId%7D/delete:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/paths/%2Fconferences/get/responses/200/content:
+  keys:
+    - paths
+/paths/%2Fconferences:
+  keys:
+    - image
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/paths/%2Fconferences/get/responses/200/content/application%2Fjson/schema:
+  keys:
+    - paths
+/paths/%2Fconferences/get/responses/200/content/application%2Fjson/schema/items:
+  keys:
+    - paths
+/:
+  keys:
+    - app
+    - dependencies
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/paths:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/operations/getAllConferences:
+  keys:
+    - description
+    - handler
+    - imports
+/paths/%2Fconferences/get/responses/200/content/application%2Fjson:
+  keys:
+    - paths
+/services:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/services/api:
+  keys:
+    - build
+    - ports
+    - volumes
+    - links
+    - environment
+/services/db:
+  keys:
+    - container_name
+    - image
+/operations:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/operations/getAllConferences/handler:
+  type: code
+  mode: javascript
+/models/conferences:
+  keys:
+    - attributes
+/models:
+  keys:
+    - image
+    - operations
+    - paths
+    - services
+    - models
+/models/conferences/attributes/name:
+  keys:
+    - required
+    - type
+/models/conferences/attributes/location:
+  keys:
+    - image
+    - models
+    - operations
+    - paths
+    - services
+/models/conferences/attributes/website:
+  keys:
+    - image
+    - models
+    - operations
+    - paths
+    - services
+/models/conferences/attributes/dates:
+  keys:
+    - image
+    - models
+    - operations
+    - paths
+    - services
+/paths/%2Fconferences/get:
+  keys:
+    - image
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/models/conferences/attributes:
+  keys:
+    - address
+    - attendUrl
+    - authorEmail
+    - authorName
+    - codeOfConduct
+    - cost
+    - dates
+    - description
+    - diversityScholarship
+    - latitude
+    - location
+    - longitude
+    - name
+    - published
+    - speakerRegistration
+    - tags
+    - twitter
+    - website
+/operations/createConference:
+  keys:
+    - imports
+    - description
+    - handler
+/operations/createConference/handler:
+  type: code
+  mode: javascript
+/paths/%2Fconferences/get/responses/200:
+  keys:
+    - paths
+/paths/%2Fconferences/post:
+  keys:
+    - operationId
+    - description
+    - parameters
+/app:
+  keys:
+    - name
+    - version
+    - description
+/fixtures:
+  keys:
+    - app
+    - fixtures
+    - image
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/fixtures/conferences/0:
+  keys:
+    - name
+    - website
+    - location
+    - dates
+    - tags
+    - published
+/images:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/images/base:
+  keys:
+    - test
+    - from
+    - run
+    - cmd
+    - workdir
+    - expose
+/imports:
+  keys:
+    - ConferenceModel
+    - sendgrid
+/services/seed:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/images/seed:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/paths/%2Fconferences/get/responses:
+  keys:
+    - paths
+/services/seed/build:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/fixtures/conferences/1:
+  keys:
+    - name
+    - website
+    - location
+    - dates
+    - tags
+    - published
+/models/conferences/attributes/tags:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/paths/%2Fconferences%2F%7BconferenceId%7D/delete/parameters/0:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/operations/deleteConference:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/operations/deleteConference/handler:
+  type: code
+  mode: javascript
+/operations/updateConference:
+  keys:
+    - imports
+    - description
+    - handler
+/operations/updateConference/handler:
+  type: code
+  mode: javascript
+/paths/%2Fconferences%2F%7BconferenceId%7D/patch:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/paths/%2Fconferences%2F%7BconferenceId%7D/patch/parameters/0:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/models/conferences/attributes/address:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/models/conferences/attributes/codeOfConduct:
+  keys:
+    - type
+    - ''
+/models/conferences/attributes/cost:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/models/conferences/attributes/description:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/models/conferences/attributes/twitter:
+  keys:
+    - app
+    - fixtures
+    - images
+    - imports
+    - models
+    - operations
+    - paths
+    - services
+/paths/%2Fconferences/post/parameters/0:
+  keys:
+    - in
+    - name
+    - required
+    - schema
+/paths/%2Fconferences/post/parameters/0/schema:
+  keys:
+    - type
+    - properties
+/paths/%2Fconferences/post/parameters/0/schema/properties:
+  keys:
+    - address
+    - codeOfConduct
+    - cost
+    - dates
+    - description
+    - location
+    - name
+    - tags
+    - twitter
+    - website
+/paths/%2Fconferences/post/parameters/0/schema/properties/address:
+  keys:
+    - type
+/paths/%2Fconferences/post/parameters/0/schema/properties/codeOfConduct:
+  keys:
+    - type
+/paths/%2Fconferences/post/parameters/0/schema/properties/cost:
+  keys:
+    - type
+/paths/%2Fconferences/post/parameters/0/schema/properties/dates:
+  keys:
+    - type
+/paths/%2Fconferences/post/parameters/0/schema/properties/description:
+  keys:
+    - type
+/paths/%2Fconferences/post/parameters/0/schema/properties/location:
+  keys:
+    - type
+/paths/%2Fconferences/post/parameters/0/schema/properties/name:
+  keys:
+    - type
+/paths/%2Fconferences/post/parameters/0/schema/properties/tags:
+  keys:
+    - type
+/paths/%2Fconferences/post/parameters/0/schema/properties/twitter:
+  keys:
+    - type
+/paths/%2Fconferences/post/parameters/0/schema/properties/website:
+  keys:
+    - type
+/models/conferences/attributes/attendUrl:
+  keys: []
+/models/conferences/attributes/diversityScholarship:
+  keys: []
+/models/conferences/attributes/speakerRegistration:
+  keys: []
+/models/conferences/attributes/published:
+  keys:
+    - type
+/models/conferences/attributes/authorName:
+  keys: []
+/models/conferences/attributes/authorEmail:
+  keys: []
+/models/conferences/attributes/latitude:
+  keys:
+    - type
+/models/conferences/attributes/longitude:
+  keys:
+    - type
+/dependencies:
+  keys:
+    - '@sendgrid/client'
+/operations/createConference/imports: {}
+/services/api/environment: {}
+/operations/updateConference/imports: {}

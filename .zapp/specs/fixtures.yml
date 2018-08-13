@@ -1,0 +1,13 @@
+conferences:
+  - name: DeveloperWeek Austin
+    website: 'http://www.developerweek.com/Austin/'
+    location: 'Austin, TX'
+    dates: 11/6 - 11/8
+    tags: ai javascript api microservices blockchain
+    published: true
+  - name: JSConf US
+    website: 'https://2018.jsconf.us'
+    location: 'Carlsbad, CA'
+    dates: 8/21 - 8/23
+    tags: javascript
+    published: false

@@ -1,0 +1,20 @@
+version: '3'
+services:
+  api:
+    build: .
+    ports:
+      - '5000:5000'
+    volumes:
+      - '.:/code'
+    links:
+      - db
+    environment:
+      - AOC_SENDGRID_API_KEY=$AOC_SENDGRID_API_KEY
+  db:
+    image: mongo
+  seed:
+    build:
+      context: .
+      dockerfile: Dockerfile-seed
+    links:
+      - db

@@ -1,0 +1,8 @@
+/zappjs/express: {}
+/zappjs:
+  keys:
+    - zappjs
+/zappjs/npm: {}
+/zappjs/readme: {}
+/zappjs/docker: {}
+/zappjs/mongoose: {}

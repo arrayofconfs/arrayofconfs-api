@@ -1,0 +1,14 @@
+base:
+  from: node
+  run: npm install
+  cmd: npm start
+  workdir: /code
+  expose: '5000'
+seed:
+  from: mongo
+  copy:
+    from: src/fixtures.json
+    to: /fixtures.json
+  cmd: >-
+    mongoimport --host db --db test --collection conferences --type json --file
+    /fixtures.json --jsonArray

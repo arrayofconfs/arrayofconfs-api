@@ -1,0 +1,184 @@
+createConference:
+  imports:
+    - ConferenceModel
+    - sendgrid
+  description: create a conference
+  handler: |-
+    const conferences = await ConferenceModel.create({
+      authorEmail: body.authorEmail,
+      authorName: body.authorName,
+      address: body.address,
+      attendUrl: body.attendUrl,
+      codeOfConduct: body.codeOfConduct,
+      cost: body.cost,
+      dates: body.dates,
+      description: body.description,
+      diversityScholarship: body.diversityScholarship,
+      latitude: body.latitude,
+      location: body.location,
+      longitude: body.longitude,
+      name: body.name,
+      published: body.published,
+      speakerRegistration: body.speakerRegistration,
+      tags: body.tags,
+      twitter: body.twitter,
+      website: body.website
+    });
+
+    if (body.authorEmail) {
+      sendgrid.setApiKey(process.env.AOC_SENDGRID_API_KEY);
+      await sendgrid.request({
+        method: 'POST',
+        url: '/v3/mail/send',
+        body: {
+          personalizations: [
+            {
+              to: [
+                {
+                  email: body.authorEmail,
+                  name: body.authorName
+                }
+              ],
+              subject: 'Thank You!',
+              substitutions: {
+                '%title%': 'Your Conf Has Been Submitted!',
+                '%message%': 'We will review your submission and email you once it\'s been published.',
+                '%buttonText%': 'LAUNCH SITE',
+                '%buttonUrl%': 'https://arrayofconfs.com'
+              }
+            }
+          ],
+          from: {
+            email: 'info@arrayofconfs.com',
+            name: 'arrayOfConfs'
+          },
+          template_id: '741b5daa-2f23-4f3c-87f0-cdf945171765'
+        }
+      });
+    }
+
+    return {
+      code: 201,
+      body: {}
+    };
+getAllConferences:
+  description: get all conferences
+  handler: |-
+    const filter = {};
+    if (!query.showUnpublished) {
+      filter.published = true;
+    }
+
+    const conferences = await ConferenceModel.find(filter);
+
+    return {
+      code: 200,
+      body: {
+        conferences: conferences.map((conference) => {
+          const data = {
+            id: conference.id,
+            address: conference.address,
+            attendUrl: conference.attendUrl,
+            codeOfConduct: conference.codeOfConduct,
+            cost: conference.cost,
+            dates: conference.dates,
+            description: conference.description,
+            diversityScholarship: conference.diversityScholarship,
+            latitude: conference.latitude,
+            location: conference.location,
+            longitude: conference.longitude,
+            name: conference.name,
+            speakerRegistration: conference.speakerRegistration,
+            tags: conference.tags,
+            twitter: conference.twitter,
+            website: conference.website
+          };
+          if (query.showUnpublished) {
+            data.authorEmail = conference.authorEmail;
+            data.published = conference.published;
+          }
+          return data;
+        })
+      }
+    };
+  imports:
+    - ConferenceModel
+deleteConference:
+  description: delete a conference
+  handler: |-
+    const conferences = await ConferenceModel.findByIdAndDelete(
+      params.conferenceId
+    );
+
+    return {
+      code: 200,
+      body: {}
+    };
+  imports:
+    - ConferenceModel
+updateConference:
+  imports:
+    - ConferenceModel
+    - sendgrid
+  description: update a conference
+  handler: |-
+    const conference = await ConferenceModel.findById(params.conferenceId);
+
+    await ConferenceModel.findByIdAndUpdate(
+      params.conferenceId,
+      {
+        address: body.address,
+        attendUrl: body.attendUrl,
+        codeOfConduct: body.codeOfConduct,
+        cost: body.cost,
+        dates: body.dates,
+        description: body.description,
+        diversityScholarship: body.diversityScholarship,
+        latitude: body.latitude,
+        location: body.location,
+        longitude: body.longitude,
+        name: body.name,
+        published: body.published,
+        speakerRegistration: body.speakerRegistration,
+        tags: body.tags,
+        twitter: body.twitter,
+        website: body.website
+      }
+    );
+
+    if (body.notifyAuthor && conference.authorEmail) {
+      sendgrid.setApiKey(process.env.AOC_SENDGRID_API_KEY);
+      await sendgrid.request({
+        method: 'POST',
+        url: '/v3/mail/send',
+        body: {
+          personalizations: [
+            {
+              to: [
+                {
+                  email: conference.authorEmail,
+                  name: conference.authorName
+                }
+              ],
+              subject: 'Published!',
+              substitutions: {
+                '%title%': 'Your Conf Has Been Published!',
+                '%message%': 'Thanks again for your submission. You rock!',
+                '%buttonText%': 'LAUNCH SITE',
+                '%buttonUrl%': 'https://arrayofconfs.com'
+              }
+            }
+          ],
+          from: {
+            email: 'info@arrayofconfs.com',
+            name: 'arrayOfConfs'
+          },
+          template_id: '741b5daa-2f23-4f3c-87f0-cdf945171765'
+        }
+      });
+    }
+
+    return {
+      code: 200,
+      body: {}
+    };

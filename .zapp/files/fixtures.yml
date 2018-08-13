@@ -1,0 +1,3 @@
+engine: json
+filename: src/fixtures.json
+mapping: /fixtures/conferences

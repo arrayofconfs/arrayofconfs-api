@@ -1,0 +1,2 @@
+ConferenceModel: ../models/conferences
+sendgrid: '@sendgrid/client'

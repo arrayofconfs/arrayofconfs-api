@@ -1,0 +1,10 @@
+/:
+  keys:
+    - - src/fixtures.json
+/src%2Ffixtures.json:
+  keys:
+    - src/fixtures.json
+/src%2Ffixtures.json/mapping:
+  keys:
+    - src/fixtures.json
+/src%2Ffixtures.json/mapping/fixtures: {}

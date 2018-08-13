@@ -1,0 +1,39 @@
+conferences:
+  attributes:
+    address:
+      type: string
+    attendUrl:
+      type: string
+    authorEmail:
+      type: string
+    authorName:
+      type: string
+    codeOfConduct:
+      type: string
+    cost:
+      type: string
+    dates:
+      type: string
+    description:
+      type: string
+    diversityScholarship:
+      type: string
+    latitude:
+      type: number
+    location:
+      type: string
+    longitude:
+      type: number
+    name:
+      required: true
+      type: string
+    published:
+      type: boolean
+    speakerRegistration:
+      type: string
+    tags:
+      type: string
+    twitter:
+      type: string
+    website:
+      type: string
