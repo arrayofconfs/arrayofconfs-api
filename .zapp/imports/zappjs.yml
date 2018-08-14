@@ -1,5 +1,5 @@
+docker: latest
 express: latest
+mongoose: latest
 npm: latest
 readme: latest
-docker: latest
-mongoose: latest

@@ -61,6 +61,19 @@ createConference:
       code: 201,
       body: {}
     };
+deleteConference:
+  description: delete a conference
+  handler: |-
+    const conferences = await ConferenceModel.findByIdAndDelete(
+      params.conferenceId
+    );
+
+    return {
+      code: 200,
+      body: {}
+    };
+  imports:
+    - ConferenceModel
 getAllConferences:
   description: get all conferences
   handler: |-
@@ -100,19 +113,6 @@ getAllConferences:
           return data;
         })
       }
-    };
-  imports:
-    - ConferenceModel
-deleteConference:
-  description: delete a conference
-  handler: |-
-    const conferences = await ConferenceModel.findByIdAndDelete(
-      params.conferenceId
-    );
-
-    return {
-      code: 200,
-      body: {}
     };
   imports:
     - ConferenceModel
