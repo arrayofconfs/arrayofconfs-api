@@ -1,0 +1,54 @@
+/conferences:
+  get:
+    operationId: getAllConferences
+    description: Returns all conferences.
+    responses:
+      '200':
+        description: A list of conferences.
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Conference'
+  post:
+    operationId: createConference
+    description: Creates a conference.
+    parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          properties:
+            address:
+              type: string
+            codeOfConduct:
+              type: string
+            cost:
+              type: string
+            dates:
+              type: string
+            description:
+              type: string
+            location:
+              type: string
+            name:
+              type: string
+            tags:
+              type: string
+            twitter:
+              type: string
+            website:
+              type: string
+'/conferences/{conferenceId}':
+  delete:
+    operationId: deleteConference
+    parameters:
+      - in: path
+        name: conferenceId
+  patch:
+    operationId: updateConference
+    parameters:
+      - in: path
+        name: conferenceId
